@@ -10,10 +10,17 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TipoProduto {
+public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
+    @ManyToOne
+    private TipoProduto tipoProduto;
+    @ManyToOne
+    private Fornecedor fornecedor;
+    private Long estoque;
+    private Float valorCusto;
+    private Float valorVenda;
 }
