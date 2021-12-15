@@ -5,6 +5,7 @@ import Fornecedor from './pages/fornecedor'
 import EditFornecedor from './pages/fornecedor/EditFornecedor'
 import NewFornecedor from './pages/fornecedor/NewFornecedor'
 import Produto from './pages/Produto'
+import EditProduto from './pages/Produto/EditProduto'
 import NewProduto from './pages/Produto/NewProduto'
 import TipoProduto from './pages/tipoProduto'
 import EditTipoProduto from './pages/tipoProduto/EditTipoproduto'
@@ -22,6 +23,7 @@ export default function Routes() {
             <Route path="/fornecedor/editar/:id" element={<EditFornecedor/>} />
             <Route path="/produto" element={<Produto/>} />
             <Route path="/produto/new" element={<NewProduto/>} />
+            <Route path="/produto/editar/:id" element={<EditProduto/>} />
         </Switch>
     )
 }
