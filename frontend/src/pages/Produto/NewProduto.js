@@ -3,17 +3,6 @@ import api from '../../api/index'
 
 export default function NewProduto() {
     const [produto, setProduto] = useState({ })
-    const [tipoProdutos, setTipoProdutos] = useState([])
-
-    async function handleRender() {
-        const response = await api.get('/tipoproduto')
-
-        setTipoProdutos(response.data)
-    }
-
-    useEffect(() => {
-        handleRender()
-    }, [])
 
     function handleChangeNome(props) {
         setProduto({...produto,
@@ -27,9 +16,11 @@ export default function NewProduto() {
         })
     }
 
-    // function handleChangeFornecedor(props) {
-    //     setIdFornecedor(props.target.value)
-    // }
+    function handleChangeFornecedor(props) {
+        setProduto({...produto,
+            fornecedor: props.target.value
+        })
+    }
 
     function handleChangeEstoque(props) {
         setProduto({...produto,
@@ -50,7 +41,18 @@ export default function NewProduto() {
     }
     
     function handleSubmit(event) {
-        api.post('/produto', produto)
+        api.post('/produto', {
+            nome: produto.nome,
+            tipoProduto: {
+                id: produto.tipoProduto
+            },
+            fornecedor: {
+                id: produto.fornecedor
+            },
+            estoque: produto.estoque,
+            valorCusto: produto.valorCusto,
+            valorVenda: produto.valorVenda,
+        })
 
         event.preventDefault()
     }
@@ -63,31 +65,25 @@ export default function NewProduto() {
             </div>
             <div>
                 <label>Tipo de Produto</label>
-                <select name="select">
-                    {
-                        tipoProdutos.map((tipoProduto) => {
-                            <option value={tipoProduto}>{tipoProduto.nome}</option>
-                        })
-                    }
-                </select>
+                <input type="number" value={produto.tipoProduto} onChange={handleChangeTipoProduto}/>
             </div>
-            {/* <div>
+            <div>
                 <label>Fornecedor</label>
-                <input type="text" value={produto.fornecedor} onChange={handleChangeFornecedor}/>
-            </div> */}
+                <input type="number" value={produto.fornecedor} onChange={handleChangeFornecedor}/>
+            </div>
             <div>
                 <label>Estoque</label>
-                <input type="text" value={produto.estoque} onChange={handleChangeEstoque}/>
+                <input type="number" value={produto.estoque} onChange={handleChangeEstoque}/>
             </div>
             <div>
                 <label>Custo</label>
-                <input type="text" value={produto.valorCusto} onChange={handleChangeCusto}/>
+                <input type="number" value={produto.valorCusto} onChange={handleChangeCusto}/>
             </div>
             <div>
                 <label>Venda</label>
-                <input type="text" value={produto.valorVenda} onChange={handleChangeVenda}/>
+                <input type="number" value={produto.valorVenda} onChange={handleChangeVenda}/>
             </div>
             <button type="submit">Enviar</button>
-        </form>
+        </form>  
     )
 }

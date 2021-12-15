@@ -38,8 +38,8 @@ export default function Produto() {
                         <tr>
                             <td style={{ border: "solid 1px"}}>{produto.id}</td>
                             <td style={{ border: "solid 1px"}}>{produto.nome}</td>
-                            <td style={{ border: "solid 1px"}}>{produto.tipoProduto}</td>
-                            <td style={{ border: "solid 1px"}}>{produto.fornecedor}</td>
+                            <td style={{ border: "solid 1px"}}>{produto.tipoProduto.nome}</td>
+                            <td style={{ border: "solid 1px"}}>{produto.fornecedor.nome}</td>
                             <td style={{ border: "solid 1px"}}>{produto.estoque}</td>
                             <td style={{ border: "solid 1px"}}>{produto.valorCusto}</td>
                             <td style={{ border: "solid 1px"}}>{produto.valorVenda}</td>
