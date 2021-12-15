@@ -14,10 +14,6 @@ export default function Fornecedor() {
     useEffect(() => {
         handleRender()
     }, [])
-    
-    function handleDelete(id) {
-        api.delete(`/fornecedor/${id}`)
-    }
 
     return(
         <div>
