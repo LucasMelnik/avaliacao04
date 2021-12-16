@@ -6,7 +6,7 @@ export default function EditFornecedor() {
     const { id } = useParams();
     const forncedorId = Number.parseInt(id, 10)
 
-    const [fornecedor, setFornecedor] = useState({ id: forncedorId })
+    const [fornecedor, setFornecedor] = useState({ })
 
     function handleChangeNome(props) {
         setFornecedor({...fornecedor,
