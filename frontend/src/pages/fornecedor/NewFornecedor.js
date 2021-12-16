@@ -30,18 +30,18 @@ export default function NewFornecedor() {
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome</label>
-                <input type="text" value={fornecedor.nome} onChange={handleChangeNome}/>
+                <input id="nome" type="text" value={fornecedor.nome} onChange={handleChangeNome}/>
             </div>
             <div>
                 <label>Telefone</label>
-                <input type="text" value={fornecedor.telefone} onChange={handleChangeTelefone}/>
+                <input id="telefone" type="text" value={fornecedor.telefone} onChange={handleChangeTelefone}/>
             </div>
             <div>
                 <label>Email</label>
-                <input type="text" value={fornecedor.email} onChange={handleChangeEmail}/>
+                <input id="email" type="text" value={fornecedor.email} onChange={handleChangeEmail}/>
             </div>
 
-            <button type="submit">Enviar</button>
+            <button id="submit" type="submit">Enviar</button>
         </form>
     )
 }

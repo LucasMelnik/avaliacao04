@@ -61,29 +61,29 @@ export default function NewProduto() {
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome</label>
-                <input type="text" value={produto.nome} onChange={handleChangeNome}/>
+                <input id="nome" type="text" value={produto.nome} onChange={handleChangeNome}/>
             </div>
             <div>
                 <label>Tipo de Produto</label>
-                <input type="number" value={produto.tipoProduto} onChange={handleChangeTipoProduto}/>
+                <input id="tipoProduto" type="number" value={produto.tipoProduto} onChange={handleChangeTipoProduto}/>
             </div>
             <div>
                 <label>Fornecedor</label>
-                <input type="number" value={produto.fornecedor} onChange={handleChangeFornecedor}/>
+                <input id="fornecedor" type="number" value={produto.fornecedor} onChange={handleChangeFornecedor}/>
             </div>
             <div>
                 <label>Estoque</label>
-                <input type="number" value={produto.estoque} onChange={handleChangeEstoque}/>
+                <input id="estoque" type="number" value={produto.estoque} onChange={handleChangeEstoque}/>
             </div>
             <div>
                 <label>Custo</label>
-                <input type="number" value={produto.valorCusto} onChange={handleChangeCusto}/>
+                <input id="custo" type="number" value={produto.valorCusto} onChange={handleChangeCusto}/>
             </div>
             <div>
                 <label>Venda</label>
-                <input type="number" value={produto.valorVenda} onChange={handleChangeVenda}/>
+                <input id="venda" type="number" value={produto.valorVenda} onChange={handleChangeVenda}/>
             </div>
-            <button type="submit">Enviar</button>
+            <button id="submit" type="submit">Enviar</button>
         </form>  
     )
 }

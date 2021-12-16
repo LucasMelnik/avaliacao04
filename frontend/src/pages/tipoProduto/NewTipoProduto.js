@@ -18,9 +18,9 @@ export default function NewTipoProduto() {
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome</label>
-                <input type="text" value={tipoProduto.nome} onChange={handleChangeNome}/>
+                <input id="nome" type="text" value={tipoProduto.nome} onChange={handleChangeNome}/>
             </div>
-            <button type="submit">Enviar</button>
+            <button id="submit" type="submit">Enviar</button>
         </form>
     )
 }
